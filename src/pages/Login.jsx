@@ -29,35 +29,13 @@ export default function Login() {
   }
 
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        gap: "1rem",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <form
-        style={{
-          width: "20%",
-          height: "40%",
-          display: "flex",
-          gap: "1rem",
-          border: "1px solid black",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-        onSubmit={handleSubmit(handleLogin)}
-      >
-        {" "}
+    <div id="loginContainer">
+      <h4>Welcome User. Log-in to continue.</h4>
+      <form onSubmit={handleSubmit(handleLogin)}>
         <div>
           <input
             {...register("email", { required: true })}
-            placeholder="Email"
+            placeholder="Enter your Email"
             type="email"
           />
           {errors.email && <small>*This field is required</small>}
@@ -65,15 +43,15 @@ export default function Login() {
         <div>
           <input
             {...register("password", { required: true })}
-            placeholder="Password"
+            placeholder="Enter Your Password"
             type="password"
           />
           {errors.password && <small>*This field is required</small>}
         </div>
-        <input type="submit" />
-        <div>
-          <a href="/signup">Create Account.</a>
-        </div>
+        <button type="submit">Log-in</button>
+
+        <h4>Don't Have an Account? </h4>
+        <a href="/signup">Create Account.</a>
       </form>
     </div>
   );
