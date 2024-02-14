@@ -35,10 +35,8 @@ export default function Signup() {
 
   return (
     <div id="signupContainer">
-      <h3 style={{ color: "black" }}>
-        Enter your details to Sign-Up with CountryLister{" "}
-      </h3>
-      <br></br>
+      <big>Sign up with CountryLister</big>
+      <div id="loginFormContainer">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <input
@@ -58,16 +56,6 @@ export default function Signup() {
           <br></br>
           {errors.lastName && <small>*This field is required</small>}
         </div>
-        {/* <div>
-          <input
-            {...register("phoneNumber", { required: true })}
-            placeholder="Enter Your Mobile Number"
-            type="number"
-          />
-          <br></br>
-          {errors.firstName && <small>*This field is required</small>}
-        </div> */}
-
         <div>
           <input
             {...register("email", { required: true })}
@@ -97,6 +85,7 @@ export default function Signup() {
         </div>
         <button>Sign-up</button>
       </form>
+      </div>
     </div>
   );
 }

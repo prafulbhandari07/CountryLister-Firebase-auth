@@ -69,16 +69,6 @@ header button {
   border-radius: 20px;
 }
 
-#signupContainer {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #f4f4f4;
-}
 img {
   width: 300px;
   margin-top: 5px;
@@ -132,4 +122,16 @@ img {
 
 #paginationContainer button {
   height: 40px;
+}
+
+
+#signupContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f4f4f4;
 }
