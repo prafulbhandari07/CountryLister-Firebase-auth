@@ -44,9 +44,13 @@ export default function Countries() {
           return (
             <div id="countryCont">
               <img src={country.flags.png} alt="" />
-              <h1>Name : {country.name.official}</h1>
-              <h4>Region: {country.region}</h4>
-              <p>Description: {country.flags.alt}</p>
+              <h2>Country - {country.name.official}</h2>
+              <br></br>
+              <h4>Region - {country.region}</h4>
+              <br></br>
+              <h5>Sub Region - {country.subregion}</h5>
+              <br></br>
+              <small>Population - {country.population}</small>
               <hr></hr>
             </div>
           );
