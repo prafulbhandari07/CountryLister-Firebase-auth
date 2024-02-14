@@ -37,54 +37,48 @@ export default function Signup() {
     <div id="signupContainer">
       <big>Sign up with CountryLister</big>
       <div id="loginFormContainer">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label>First Name</label>
           <input
             {...register("firstName", { required: true })}
             placeholder="Enter Your First Name"
             type="text"
           />
-          <br></br>
           {errors.firstName && <small>*This field is required</small>}
-        </div>
-        <div>
+          <label>Last Name</label>
           <input
             {...register("lastName", { required: true })}
             placeholder="Enter Your Last Name"
             type="text"
           />
-          <br></br>
           {errors.lastName && <small>*This field is required</small>}
-        </div>
-        <div>
+
+          <label>Email Address</label>
           <input
             {...register("email", { required: true })}
             placeholder="Enter Your Email"
             type="email"
           />
-          <br></br>
           {errors.email && <small>*This field is required</small>}
-        </div>
-        <div>
+          <label>Password</label>
           <input
             {...register("password", { required: true })}
             placeholder="Enter Password"
             type="password"
           />
-          <br></br>
+
           {errors.password && <small>*This field is required</small>}
-        </div>
-        <div>
+          <label>Re-enter Password</label>
           <input
             {...register("password", { required: true })}
             placeholder="Re-Enter Password"
             type="password"
           />
-          <br></br>
           {errors.password && <small>*This field is required</small>}
-        </div>
-        <button>Sign-up</button>
-      </form>
+          <div>
+            <button>Sign-up</button>
+          </div>
+        </form>
       </div>
     </div>
   );

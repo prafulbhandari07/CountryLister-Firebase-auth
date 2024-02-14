@@ -54,6 +54,8 @@ header {
   margin-bottom: 10px;
   background-color: rgb(4, 162, 17);
   color: white;
+  border-radius: 5px;
+  height: 30px;
 }
 
 input {
@@ -123,7 +125,6 @@ img {
 #paginationContainer button {
   height: 40px;
 }
-
 
 #signupContainer {
   width: 100vw;
