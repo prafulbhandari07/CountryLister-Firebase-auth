@@ -22,12 +22,30 @@ export default function Pagination({ lastPage, currentPage, setCurrentPage }) {
       >
         Previous
       </button>
-      <span>
-        <p>
-          {currentPage} of {lastPage}
-        </p>
+      <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <input
+          style={{
+            width: "80px",
+            paddingLeft: "30px",
+          }}
+          min={1}
+          type="number"
+          value={currentPage}
+          onChange={(e) => setCurrentPage(+e.target.value)}
+        />
+
+        <p>of</p>
+        <input
+          style={{
+            width: "80px",
+            paddingLeft: "30px",
+          }}
+          min={1}
+          value={lastPage}
+        />
       </span>
-      <button style={{ width: "80px" }}
+      <button
+        style={{ width: "80px" }}
         onClick={() => setCurrentPage((prev) => prev + 1)}
         disabled={currentPage === lastPage}
       >
