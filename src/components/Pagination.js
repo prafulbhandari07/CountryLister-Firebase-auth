@@ -23,6 +23,7 @@ export default function Pagination({ lastPage, currentPage, setCurrentPage }) {
         Previous
       </button>
       <span style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+        <p>Page</p>
         <input
           style={{
             width: "80px",
