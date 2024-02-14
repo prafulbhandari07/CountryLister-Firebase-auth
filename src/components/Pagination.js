@@ -1,67 +1,37 @@
 import React from "react";
 
-export default function Pagination({ currentPage, setCurrentPage, lastPage }) {
-  function handleNext() {
-    if (currentPage >= lastPage) {
-      return;
+export default function Pagination({ lastPage, currentPage, setCurrentPage }) {
+  const handleInputChange = (e) => {
+    let value = parseInt(e.target.value);
+    if (isNaN(value)) {
+      value = 1;
+    } else if (value < 1) {
+      value = 1;
+    } else if (value > lastPage) {
+      value = lastPage;
     }
-    setCurrentPage((prev) => prev + 1);
-  }
-  function handlePrev() {
-    if (currentPage < 2) {
-      return;
-    }
-    setCurrentPage((prev) => prev - 1);
-  }
-  function goToFirst() {
-    setCurrentPage(1);
-  }
-  function goToLast() {
-    setCurrentPage(lastPage);
-  }
+    setCurrentPage(value);
+  };
+
   return (
     <div id="paginationContainer">
       <button
-        style={{
-          width: "80px",
-        }}
-        onClick={goToFirst}
+        style={{ width: "80px" }}
+        onClick={() => setCurrentPage((prev) => prev - 1)}
+        disabled={currentPage === 1}
       >
-        {"<<"}
+        Previous
       </button>
-      <button
-        style={{
-          width: "80px",
-        }}
-        onClick={handlePrev}
+      <span>
+        <p>
+          {currentPage} of {lastPage}
+        </p>
+      </span>
+      <button style={{ width: "80px" }}
+        onClick={() => setCurrentPage((prev) => prev + 1)}
+        disabled={currentPage === lastPage}
       >
-        {"<"}
-      </button>
-      <input
-        style={{
-          width: "80px",
-          paddingLeft: "30px",
-        }}
-        min={1}
-        type="number"
-        value={currentPage}
-        onChange={(e) => setCurrentPage(+e.target.value)}
-      />
-      <button
-        style={{
-          width: "80px",
-        }}
-        onClick={handleNext}
-      >
-        {">"}
-      </button>
-      <button
-        style={{
-          width: "80px",
-        }}
-        onClick={goToLast}
-      >
-        {">>"}
+        Next
       </button>
     </div>
   );

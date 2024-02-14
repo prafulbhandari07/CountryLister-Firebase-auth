@@ -20,7 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(51, 181, 22);
+  background-color: black;
 }
 
 #loginContainer {
@@ -69,11 +69,13 @@ input {
 header button {
   width: 100px;
   height: 30px;
-  border-radius: 20px;
+  border-radius: 6px;
+  margin-right: 40px;
 }
 
 img {
-  width: 300px;
+  width: 100px;
+  height: 75px;
   margin-top: 5px;
   border: 2px solid black;
 }
@@ -81,9 +83,13 @@ img {
 #container {
   background-color: white;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #countryTable {
-  width: 100%;
+  width: 80%;
+  height: 80%;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -120,7 +126,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 0;
+  margin-top: 10px;
+  padding: 23px 0;
   gap: 8px;
 }
 
@@ -138,6 +145,6 @@ img {
   flex-direction: column;
 }
 
-header h3 {
+header h4 {
   color: white;
 }
