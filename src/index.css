@@ -35,24 +35,30 @@ header {
 }
 
 form {
-  background-color: aliceblue;
+  background-color: rgb(216, 235, 252);
   color: black;
-  width: 25%;
-  height: 70%;
+  width: 35%;
+  height: 80%;
   display: flex;
   gap: 2rem;
   border: 2px solid black;
-  border-radius: 50px;
+  border-radius: 30px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 input {
+  background: linear-gradient(rgb(217, 170, 170), rgb(141, 141, 226));
+  color: azure;
   height: 40px;
-  width: 180px;
+  width: 280px;
   border: 2px solid black;
   border-radius: 5px;
+  padding: 10px;
+}
+input:hover {
+  border: none;
 }
 
 button {
@@ -60,7 +66,9 @@ button {
   width: 180px;
   border-radius: 50px;
 }
-
+button:hover {
+  border: black;
+}
 header button {
   width: 100px;
   height: 30px;
@@ -75,8 +83,24 @@ header button {
   align-items: center;
   border: 1px solid black;
 }
+#signupContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f4f4f4;
+}
 img {
   width: 300px;
   margin-top: 5px;
   border: 2px solid black;
+}
+
+form div {
+  height: 7%;
+  margin-top: 10px;
+  padding: 0%;
 }

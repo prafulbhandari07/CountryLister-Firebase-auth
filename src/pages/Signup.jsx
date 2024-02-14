@@ -1,10 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { database } from "../firebase";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { login } from "../redux/slices/authSlice";
 import { useDispatch } from "react-redux";
 
@@ -33,17 +30,11 @@ export default function Signup() {
   };
 
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        gap: "1rem",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <div id="signupContainer">
+      <h3 style={{ color: "black" }}>
+        Enter your details to Sign-Up with CountryLister{" "}
+      </h3>
+      <br></br>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <input
@@ -51,6 +42,7 @@ export default function Signup() {
             placeholder="Enter Your First Name"
             type="text"
           />
+          <br></br>
           {errors.firstName && <small>*This field is required</small>}
         </div>
         <div>
@@ -59,6 +51,7 @@ export default function Signup() {
             placeholder="Enter Your Last Name"
             type="text"
           />
+          <br></br>
           {errors.lastName && <small>*This field is required</small>}
         </div>
         <div>
@@ -67,6 +60,7 @@ export default function Signup() {
             placeholder="Enter Your Mobile Number"
             type="number"
           />
+          <br></br>
           {errors.firstName && <small>*This field is required</small>}
         </div>
 
@@ -76,6 +70,7 @@ export default function Signup() {
             placeholder="Enter Your Email"
             type="email"
           />
+          <br></br>
           {errors.email && <small>*This field is required</small>}
         </div>
         <div>
@@ -84,6 +79,7 @@ export default function Signup() {
             placeholder="Enter Password"
             type="password"
           />
+          <br></br>
           {errors.password && <small>*This field is required</small>}
         </div>
         <div>
@@ -92,6 +88,7 @@ export default function Signup() {
             placeholder="Re-Enter Password"
             type="password"
           />
+          <br></br>
           {errors.password && <small>*This field is required</small>}
         </div>
         <button onClick={onSubmit}>Sign-up</button>

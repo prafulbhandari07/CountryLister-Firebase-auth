@@ -38,6 +38,7 @@ export default function Login() {
             placeholder="Enter your Email"
             type="email"
           />
+          <br></br>
           {errors.email && <small>*This field is required</small>}
         </div>
         <div>
@@ -46,6 +47,7 @@ export default function Login() {
             placeholder="Enter Your Password"
             type="password"
           />
+          <br></br>
           {errors.password && <small>*This field is required</small>}
         </div>
         <button type="submit">Log-in</button>
