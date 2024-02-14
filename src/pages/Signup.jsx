@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 
 export default function Signup() {
   const dispatch = useDispatch();
+  
   const {
     register,
     handleSubmit,

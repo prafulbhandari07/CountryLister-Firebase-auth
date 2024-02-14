@@ -49,7 +49,8 @@ export default function Pagination({ currentPage, setCurrentPage, lastPage }) {
       </button>
       <input
         style={{
-          width: "50px",
+          width: "80px",
+          paddingLeft: "30px",
         }}
         min={1}
         type="number"
