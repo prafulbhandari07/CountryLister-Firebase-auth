@@ -31,11 +31,13 @@ export default function Countries() {
         style={{
           display: "flex",
           flexWrap: "wrap",
-          maxWidth: "90%",
+          maxWidth: "100%",
           margin: "0 auto",
           width: "100%",
           gap: "8px",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          backgroundColor: "white",
+          color: "black",
         }}
       >
         {currentCountries.map((country) => {

@@ -22,6 +22,7 @@ export default function Pagination({ currentPage, setCurrentPage, lastPage }) {
   return (
     <div
       style={{
+        backgroundColor: "#f4f4f4",
         width: "100%",
         display: "flex",
         justifyContent: "center",
