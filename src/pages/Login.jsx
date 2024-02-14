@@ -30,31 +30,34 @@ export default function Login() {
 
   return (
     <div id="loginContainer">
-      <h4>Welcome User. Log-in to continue.</h4>
-      <form onSubmit={handleSubmit(handleLogin)}>
-        <div>
+      <big>Sign-in to CountryLister</big>
+      <div id="loginFormContainer">
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <label>Email Address</label>
           <input
             {...register("email", { required: true })}
             placeholder="Enter your Email"
             type="email"
           />
-          <br></br>
+
           {errors.email && <small>*This field is required</small>}
-        </div>
-        <div>
+          <label>Password</label>
           <input
             {...register("password", { required: true })}
             placeholder="Enter Your Password"
             type="password"
           />
-          <br></br>
-          {errors.password && <small>*This field is required</small>}
-        </div>
-        <button type="submit">Log-in</button>
 
-        <h4>Don't Have an Account? </h4>
-        <a href="/signup">Create Account.</a>
-      </form>
+          {errors.password && <small>*This field is required</small>}
+          <div>
+            <button type="submit">Sign in</button>
+          </div>
+        </form>
+      </div>
+      <div id="loginBottomContainer">
+        <p>New to CountryLister?</p>
+        <a href="/signup">Create an account</a>
+      </div>
     </div>
   );
 }

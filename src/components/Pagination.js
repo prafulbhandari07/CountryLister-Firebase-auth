@@ -20,17 +20,7 @@ export default function Pagination({ currentPage, setCurrentPage, lastPage }) {
     setCurrentPage(lastPage);
   }
   return (
-    <div
-      style={{
-        backgroundColor: "#f4f4f4",
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "24px 0",
-        gap: "8px",
-      }}
-    >
+    <div id="paginationContainer">
       <button
         style={{
           width: "80px",
