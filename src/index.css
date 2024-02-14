@@ -68,5 +68,15 @@ header button {
 }
 #countryCont {
   width: 30%;
-  padding: 10px 5px 10px 5px;
+  margin: 5px 0px 0px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+img {
+  width: 300px;
+  margin-top: 5px;
+  border: 2px solid black;
 }
