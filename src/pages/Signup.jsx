@@ -2,12 +2,12 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { database } from "../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { login } from "../redux/slices/authSlice";
-import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-  const dispatch = useDispatch();
-  
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -24,10 +24,13 @@ export default function Signup() {
       await updateProfile(response.user, {
         displayName: `${data.firstName} ${data.lastName}`,
       });
-
-      dispatch(login(response.user));
-    } catch (error) {}
-    console.log(data);
+      toast.success("Account Creation Successful. You can login now.");
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
 
   return (
@@ -92,7 +95,7 @@ export default function Signup() {
           <br></br>
           {errors.password && <small>*This field is required</small>}
         </div>
-        <button onClick={onSubmit}>Sign-up</button>
+        <button>Sign-up</button>
       </form>
     </div>
   );

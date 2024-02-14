@@ -24,7 +24,7 @@ export default function Login() {
       );
       dispatch(login(response.user));
     } catch (error) {
-      toast.error(error.message);
+      toast.error("Account doesn't exist. To continue, create an account");
     }
   }
 
