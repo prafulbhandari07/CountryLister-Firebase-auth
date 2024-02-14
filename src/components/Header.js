@@ -12,7 +12,7 @@ export default function Header() {
   const navigate = useNavigate();
 
   async function handleLogout() {
-    await signOut(database);
+    await signOut(database);    
     dispatch(logout());
     navigate("/");
   }

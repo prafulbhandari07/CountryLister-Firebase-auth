@@ -38,8 +38,8 @@ header {
   flex-direction: column;
   align-items: center;
   width: 300px;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 6px;
   background-color: #f4f4f4;
 }
 
@@ -56,11 +56,12 @@ header {
   color: white;
   border-radius: 5px;
   height: 30px;
+  border: none;
 }
 
 input {
   width: 280px;
-  border: 2px solid black;
+  border: 0.5px solid rgb(252, 252, 217);
   border-radius: 5px;
   padding: 10px;
 }
@@ -104,7 +105,8 @@ img {
 
 #loginBottomContainer {
   border: 1px solid black;
-  width: 200px;
+  width: 300px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,5 +136,8 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #f4f4f4;
+}
+
+header h3 {
+  color: white;
 }

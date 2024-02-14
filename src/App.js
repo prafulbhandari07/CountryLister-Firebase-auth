@@ -1,20 +1,29 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Login from "./pages/Login";
 import Countries from "./pages/Countries";
 import Signup from "./pages/Signup";
 import { useSelector } from "react-redux";
+import UpdateProfile from "./pages/UpdateProfile";
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const [isLoggedIn, user] = useSelector((state) => [
+    state.auth.isLoggedIn,
+    state.auth.user,
+  ]);
 
   return (
     <Routes>
-      {isLoggedIn ? (
+      {isLoggedIn && user?.displayName.trim() ? (
         <React.Fragment>
-          <Route path="/countries" element={<Countries />} />
-          <Route path="*" element={<Navigate to={"/countries"} />} />
+          <Route path="/" element={<Countries />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </React.Fragment>
+      ) : isLoggedIn && !user?.displayName.trim() ? (
+        <React.Fragment>
+          <Route path="/update-profile" element={<UpdateProfile />} />
+          <Route path="*" element={<Navigate to="/update-profile" />} />
         </React.Fragment>
       ) : (
         <React.Fragment>

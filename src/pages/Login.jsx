@@ -5,9 +5,11 @@ import { database } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -22,6 +24,11 @@ export default function Login() {
         data.email,
         data.password
       );
+      if(response.user && response.user.displayName){
+        navigate("/")
+      }else{
+        navigate("/update-profile")
+      }
       dispatch(login(response.user));
     } catch (error) {
       toast.error("Account doesn't exist. To continue, create an account");
