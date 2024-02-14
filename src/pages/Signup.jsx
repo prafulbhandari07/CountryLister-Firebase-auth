@@ -58,7 +58,7 @@ export default function Signup() {
           <br></br>
           {errors.lastName && <small>*This field is required</small>}
         </div>
-        <div>
+        {/* <div>
           <input
             {...register("phoneNumber", { required: true })}
             placeholder="Enter Your Mobile Number"
@@ -66,7 +66,7 @@ export default function Signup() {
           />
           <br></br>
           {errors.firstName && <small>*This field is required</small>}
-        </div>
+        </div> */}
 
         <div>
           <input
