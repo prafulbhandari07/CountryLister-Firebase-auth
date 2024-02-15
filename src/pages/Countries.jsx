@@ -5,24 +5,42 @@ import Pagination from "../components/Pagination";
 export default function Countries() {
   const [countries, setCountries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [countriesPerPage, setCountriesPerPage] = useState(5);
+  const [countriesPerPage] = useState(5);
+  const [inputText, setInputText] = useState("");
+  const [filteredCountries, setFilteredCountries] = useState([]);
 
   useEffect(() => {
     fetchCountryData();
   }, []);
 
+  useEffect(() => {
+    const filteredItems = countries.filter((country) => {
+      const input = inputText.toLowerCase();
+      const name = country.name.official.toLowerCase();
+      return name.includes(input);
+    });
+
+    setFilteredCountries(filteredItems);
+  }, [inputText, countries]);
+
   async function fetchCountryData() {
-    const response = await fetch("https://restcountries.com/v3.1/all");
-    const data = await response.json();
-    setCountries(data);
+    try {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const data = await response.json();
+      setCountries(data);
+      setFilteredCountries(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   }
 
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
-  const currentCountries = countries.slice(
+  const currentCountries = filteredCountries.slice(
     indexOfFirstCountry,
     indexOfLastCountry
   );
+
   return (
     <>
       <Header />
@@ -32,7 +50,21 @@ export default function Countries() {
           <thead>
             <tr>
               <th>Country's Flag</th>
-              <th>Country's Name</th>
+              <th
+                style={{
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  alignItems: "center",
+                }}
+              >
+                <h4>Search Countries Here👉🏻 </h4>
+                <input
+                  type="text"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  style={{ border: "1px solid black" }}
+                />
+              </th>
               <th>Region</th>
               <th>Subregion</th>
               <th>Population</th>
@@ -41,7 +73,7 @@ export default function Countries() {
           <tbody>
             {currentCountries.map((country) => {
               return (
-                <tr>
+                <tr key={country.cca3}>
                   <td>
                     <img src={country.flags.png} alt="" />
                   </td>
@@ -56,7 +88,7 @@ export default function Countries() {
         </table>
       </div>
       <Pagination
-        lastPage={Math.ceil(countries.length / countriesPerPage)}
+        lastPage={Math.ceil(filteredCountries.length / countriesPerPage)}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

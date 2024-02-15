@@ -26,24 +26,28 @@ export default function Pagination({ lastPage, currentPage, setCurrentPage }) {
         <p>Page</p>
         <input
           style={{
-            width: "80px",
-            paddingLeft: "30px",
+            width: "50px",
+            paddingLeft: "10px",
+            marginRight: "10px",
           }}
           min={1}
-          max={50}
+          max={lastPage}
           type="number"
           value={currentPage}
-          onChange={(e) => setCurrentPage(+e.target.value)}
+          onChange={handleInputChange}
+          aria-label="Current Page"
         />
-
         <p>of</p>
         <input
           style={{
-            width: "80px",
-            paddingLeft: "30px",
+            width: "50px",
+            paddingLeft: "10px",
+            marginRight: "10px",
           }}
           min={1}
           value={lastPage}
+          aria-label="Total Pages"
+          readOnly
         />
       </span>
       <button

@@ -33,7 +33,7 @@ export default function Login() {
     } catch (error) {
       toast.error("Account doesn't exist. To continue, create an account");
     }
-  }
+  } 
 
   return (
     <div id="loginContainer">
