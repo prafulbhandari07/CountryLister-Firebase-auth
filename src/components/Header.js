@@ -18,7 +18,7 @@ export default function Header() {
   }
   return (
     <header>
-      <h4 style={{ marginLeft: "1px" }}>Welcome {user.displayName}</h4>
+      <h4 style={{ marginLeft: "10px" }}>Welcome {user.displayName}</h4>
       <div
         style={{
           display: "flex",
