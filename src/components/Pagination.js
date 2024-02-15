@@ -30,6 +30,7 @@ export default function Pagination({ lastPage, currentPage, setCurrentPage }) {
             paddingLeft: "30px",
           }}
           min={1}
+          max={50}
           type="number"
           value={currentPage}
           onChange={(e) => setCurrentPage(+e.target.value)}
