@@ -26,7 +26,7 @@ export default function Pagination({ lastPage, currentPage, setCurrentPage }) {
         <p>Page</p>
         <input
           style={{
-            width: "50px",
+            width: "60px",
             paddingLeft: "10px",
             marginRight: "10px",
           }}
